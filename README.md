@@ -1,2 +1,2 @@
 # Astrolab
-A cross-language framework
+A database manager free and opensource.
