@@ -32,16 +32,32 @@ go install github.com/wailsapp/wails/v2/cmd/wails@latest
 Here’s a quick overview of the project structure:
 
 ```
-astrolab-frontend/
-├── src/                # React TS source files
-│   ├── components/     # Reusable UI components
-│   ├── pages/          # Main application pages
-│   ├── hooks/          # Custom hooks for data fetching and state
-│   └── assets/         # Static files (images, icons, etc.)
-├── public/             # Public files (HTML, etc.)
-├── wails/              # Wails-specific files
-├── package.json        # Node dependencies and scripts
-└── wails.json          # Wails configuration file
+.
+├── README.md
+├── app.go
+├── build
+│   ├── appicon.png
+│   ├── darwin/
+│   └── windows/
+│       ├── installer/
+│       └── wails.exe.manifest
+├── frontend
+│   ├── dist/
+│   ├── index.html
+│   ├── package.json
+│   ├── src/
+│   │   ├── App.tsx
+│   │   ├── assets/
+│   │   │   └── images/
+│   │   ├── main.tsx
+│   │   └── style.css
+│   └── wailsjs/
+│       ├── go/
+│       └── runtime/
+├── go.mod
+├── go.sum
+├── main.go
+└── wails.json
 ```
 
 ## Getting Started
