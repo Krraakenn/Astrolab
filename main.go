@@ -2,24 +2,47 @@ package main
 
 import (
 	"embed"
+	"fmt"
+	"log"
 
+	"github.com/go-gl/glfw/v3.3/glfw"
 	"github.com/wailsapp/wails/v2"
 	"github.com/wailsapp/wails/v2/pkg/options"
 	"github.com/wailsapp/wails/v2/pkg/options/assetserver"
 )
 
-//go:embed all:frontend/dist
+func init() {
+	if err := glfw.Init(); err != nil {
+		log.Fatalln("failed to initialize glfw:", err)
+	}
+}
+
 var assets embed.FS
 
 func main() {
+
+	defer glfw.Terminate()
+
+	monitor := glfw.GetPrimaryMonitor()
+	if monitor == nil {
+		log.Fatalln("failed to get primary monitor")
+	}
+
+	mode := monitor.GetVideoMode()
+	if mode == nil {
+		log.Fatalln("failed to get video mode")
+	}
+
+	fmt.Printf("Screen Width: %d, Screen Height: %d\n", mode.Width, mode.Height)
+
 	// Create an instance of the app structure
 	app := NewApp()
 
 	// Create application with options
 	err := wails.Run(&options.App{
-		Title:  "myproject",
-		Width:  1024,
-		Height: 768,
+		Title:  "Astrolabs",
+		Width:  mode.Width,
+		Height: mode.Height,
 		AssetServer: &assetserver.Options{
 			Assets: assets,
 		},

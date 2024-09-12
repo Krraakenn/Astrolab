@@ -4,7 +4,10 @@ go 1.21
 
 toolchain go1.22.5
 
-require github.com/wailsapp/wails/v2 v2.9.1
+require (
+	github.com/go-gl/glfw/v3.3/glfw v0.0.0-20240506104042-037f3cc74f2a
+	github.com/wailsapp/wails/v2 v2.9.1
+)
 
 require (
 	github.com/bep/debounce v1.2.1 // indirect
