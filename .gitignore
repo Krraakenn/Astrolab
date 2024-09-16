@@ -1,3 +1,8 @@
 build/bin
 node_modules
 frontend/dist
+
+
+# Ides
+.idea
+.vscode

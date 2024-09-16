@@ -1,0 +1,21 @@
+name: Astrolab
+volumes:
+  mysql-db-data:
+networks:
+  backend:
+
+services:
+  astrolab-mysql:
+    image: mysql:5.7
+    container_name: astrolab-mysql
+    volumes:
+      - mysql-db-data:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: astrolab
+      MYSQL_USER: astrolab
+      MYSQL_PASSWORD: astrolab
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - '3306:3306'
+    networks:
+      - backend

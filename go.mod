@@ -1,4 +1,4 @@
-module myproject
+module Astrolab
 
 go 1.21
 
