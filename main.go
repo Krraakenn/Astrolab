@@ -54,8 +54,8 @@ func main() {
 		Mac: &mac.Options{
 			TitleBar: mac.TitleBarHiddenInset(),
 			About: &mac.AboutInfo{
-				Title:   "My Application",
-				Message: "© 2021 Me",
+				Title:   "Astrolabs",
+				Message: "Free and Open Source Database Management Tool",
 				Icon:    macIcon,
 			},
 		},
