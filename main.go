@@ -33,7 +33,7 @@ func main() {
 
 	mode := monitor.GetVideoMode()
 	if mode == nil {
-		log.Fatalln("failed to get video mode")
+		log.Fatalln("failed to get video mode :[")
 	}
 
 	// Create an instance of the app structure
