@@ -2,7 +2,6 @@ package main
 
 import (
 	"embed"
-	"fmt"
 	"log"
 
 	"github.com/go-gl/glfw/v3.3/glfw"
@@ -36,8 +35,6 @@ func main() {
 	if mode == nil {
 		log.Fatalln("failed to get video mode")
 	}
-
-	fmt.Printf("Screen Width: %d, Screen Height: %d\n", mode.Width, mode.Height)
 
 	// Create an instance of the app structure
 	app := NewApp()
