@@ -9,6 +9,7 @@ import (
 	"github.com/wailsapp/wails/v2"
 	"github.com/wailsapp/wails/v2/pkg/options"
 	"github.com/wailsapp/wails/v2/pkg/options/assetserver"
+	"github.com/wailsapp/wails/v2/pkg/options/mac"
 )
 
 func init() {
@@ -18,6 +19,9 @@ func init() {
 }
 
 var assets embed.FS
+
+//go:embed frontend/src/assets/images/logo_astrolab.png
+var macIcon []byte
 
 func main() {
 
@@ -38,7 +42,6 @@ func main() {
 	// Create an instance of the app structure
 	app := NewApp()
 
-	// Create application with options
 	err := wails.Run(&options.App{
 		Title:  "Astrolabs",
 		Width:  mode.Width,
@@ -50,6 +53,14 @@ func main() {
 		OnStartup:        app.startup,
 		Bind: []interface{}{
 			app,
+		},
+		Mac: &mac.Options{
+			TitleBar: mac.TitleBarHiddenInset(),
+			About: &mac.AboutInfo{
+				Title:   "My Application",
+				Message: "© 2021 Me",
+				Icon:    macIcon,
+			},
 		},
 	})
 
