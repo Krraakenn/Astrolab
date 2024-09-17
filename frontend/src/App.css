@@ -1,32 +1,3 @@
 .box {
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    /* Horizontal centering */
-    align-items: center;
-    flex-direction: column;
-}
-
-#astrolab {
-    display: inline-block;
-    font-size: 2em;
-    font-family: Arial, sans-serif;
-}
-
-#astrolab span {
-    display: inline-block;
-    transition: transform 0.3s ease;
-}
-
-#astrolab span:hover {
-    transform: translateY(-20px);
-}
-
-.logo {
-    transition: transform 0.5s ease;
-}
-
-.logo:hover {
-    transform: rotate(360deg);
-    transition: transform 0.5s ease;
 }
