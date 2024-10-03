@@ -38,9 +38,9 @@ export default function Navbar() {
             No saved connections
           </p>
         ) : (
-          <div>
+          <div className="navbar-databases-box-items-box">
             {databases.map((db) => (
-              <DatabaseItem title={db.name} />
+              <DatabaseItem title={db.name} description={db.host + ":" + db.port + "/" + db.name}/>
             ))}
           </div>
         )}
