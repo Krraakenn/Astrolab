@@ -1,0 +1,9 @@
+.header {
+    display: flex;
+    border: solid 1px #e0e0e0;
+}
+
+.logo {
+    width: 48px;
+    height: 48px;
+}

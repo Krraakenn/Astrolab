@@ -1,10 +1,13 @@
-import logo from "./assets/images/logo_astrolab.png";
 import "./App.css";
+import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   return (
     <div className="box">
-      
+      <Navbar/>
+      <div>
+        
+      </div>
     </div>
   );
 }
