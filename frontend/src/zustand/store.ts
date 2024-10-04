@@ -4,6 +4,7 @@ export enum DatabaseType {
   Postgres = "PGSQL",
   MySql = "MYSQL",
   MariaDB = "MARIADB",
+  None = "",
 }
 
 export interface Database {
@@ -20,6 +21,10 @@ interface DatabaseState {
   addDatabase: (db: Database) => void;
   removeDatabase: (name: string) => void;
   updateDatabase: (db: Database) => void;
+}
+
+interface GlobalState {
+  connectionType: DatabaseType;
 }
 
 export const useDatabaseStore = create<DatabaseState>((set) => ({
@@ -41,4 +46,8 @@ export const useDatabaseStore = create<DatabaseState>((set) => ({
         db.name === updatedDb.name ? updatedDb : db
       ),
     })),
+}));
+
+export const useGlobalStore = create<GlobalState>((set) => ({
+  connectionType: DatabaseType.None,
 }));
