@@ -44,4 +44,26 @@
     width: 40%;
     background-color: rgb(240, 240, 240);
     border-radius: 10px;
+    padding: 20px;
+    text-align: start;
+}
+
+.create-connection-title {
+    color: black;
+    font-weight: bold;
+}
+
+.create-co-host-and-port {
+    display: flex;
+    width: 100%;
+    color: grey;
+}
+
+.create-co-host {
+    width: 70%;
+    margin-right: 10px;
+}
+
+.create-co-port {
+    width: 30%;
 }
